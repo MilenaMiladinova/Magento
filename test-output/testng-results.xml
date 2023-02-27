@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-02-26T22:51:13 EET" name="Suite" finished-at="2023-02-26T22:53:21 EET" duration-ms="127938">
+    <groups>
+      <group name="ErrorHandling">
+        <method signature="ErrorValidationsTest.AccountCreationErrorValidation()[pri:0, instance:lumashop.tests.ErrorValidationsTest@8458f04]" name="AccountCreationErrorValidation" class="lumashop.tests.ErrorValidationsTest"/>
+        <method signature="ErrorValidationsTest.ProductErrorValidation()[pri:0, instance:lumashop.tests.ErrorValidationsTest@8458f04]" name="ProductErrorValidation" class="lumashop.tests.ErrorValidationsTest"/>
+      </group> <!-- ErrorHandling -->
+    </groups>
+    <test started-at="2023-02-26T22:51:13 EET" name="Submit Order Test" finished-at="2023-02-26T22:52:22 EET" duration-ms="69564">
+      <class name="lumashop.tests.SubmitOrderTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:lumashop.tests.SubmitOrderTest@791f145a]" started-at="2023-02-26T22:51:13 EET" name="launchApplication" finished-at="2023-02-26T22:51:26 EET" duration-ms="12579" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="submitOrder()[pri:0, instance:lumashop.tests.SubmitOrderTest@791f145a]" started-at="2023-02-26T22:51:26 EET" name="submitOrder" finished-at="2023-02-26T22:52:22 EET" duration-ms="56677" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- submitOrder -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:lumashop.tests.SubmitOrderTest@791f145a]" started-at="2023-02-26T22:52:22 EET" name="tearDown" finished-at="2023-02-26T22:52:22 EET" duration-ms="210" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- lumashop.tests.SubmitOrderTest -->
+    </test> <!-- Submit Order Test -->
+    <test started-at="2023-02-26T22:52:23 EET" name="Error Validations Test" finished-at="2023-02-26T22:53:21 EET" duration-ms="58317">
+      <class name="lumashop.tests.ErrorValidationsTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:lumashop.tests.ErrorValidationsTest@8458f04]" started-at="2023-02-26T22:52:23 EET" name="launchApplication" finished-at="2023-02-26T22:52:29 EET" duration-ms="6720" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="AccountCreationErrorValidation()[pri:0, instance:lumashop.tests.ErrorValidationsTest@8458f04]" started-at="2023-02-26T22:52:29 EET" name="AccountCreationErrorValidation" finished-at="2023-02-26T22:52:41 EET" duration-ms="12158" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AccountCreationErrorValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:lumashop.tests.ErrorValidationsTest@8458f04]" started-at="2023-02-26T22:52:41 EET" name="tearDown" finished-at="2023-02-26T22:52:42 EET" duration-ms="170" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:lumashop.tests.ErrorValidationsTest@8458f04]" started-at="2023-02-26T22:52:42 EET" name="launchApplication" finished-at="2023-02-26T22:52:48 EET" duration-ms="6305" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="ProductErrorValidation()[pri:0, instance:lumashop.tests.ErrorValidationsTest@8458f04]" started-at="2023-02-26T22:52:48 EET" name="ProductErrorValidation" finished-at="2023-02-26T22:53:21 EET" duration-ms="32739" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ProductErrorValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:lumashop.tests.ErrorValidationsTest@8458f04]" started-at="2023-02-26T22:53:21 EET" name="tearDown" finished-at="2023-02-26T22:53:21 EET" duration-ms="194" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- lumashop.tests.ErrorValidationsTest -->
+    </test> <!-- Error Validations Test -->
+  </suite> <!-- Suite -->
+</testng-results>
