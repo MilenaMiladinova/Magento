@@ -54,7 +54,7 @@ public class SubmitOrderTest extends BaseTest {
 		
        
 		AccountCreationPage accountCreationPage = homePage.goCreateAccount();
-		accountCreationPage.createAccount("George", "King", "ma408of555@gmail.com", "Password123");
+		accountCreationPage.createAccount("George", "King", "ma408of559@gmail.com", "Password123");
 		Assert.assertEquals(driver.findElement(By.cssSelector("div[data-ui-id='message-success']")).getText(),
 				"Thank you for registering with Main Website Store.");
 		ProductCatalogue productCatalogue = accountCreationPage.goToProductCatalogue();

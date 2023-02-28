@@ -39,7 +39,7 @@ public class ErrorValidationsTest extends BaseTest {
 	
        
 		AccountCreationPage accountCreationPage = homePage.goCreateAccount();
-		accountCreationPage.createAccount("George", "King", "ma408of555@gmail.com", "Password123");
+		accountCreationPage.createAccount("George", "King", "ma408of559@gmail.com", "Password123");
 		accountCreationPage.getErrorMessage();
 		Assert.assertEquals("There is already an account with this email address. If you are sure that it is your email address, click here to get your password and access your account.", accountCreationPage.getErrorMessage());
 		
@@ -52,7 +52,7 @@ public class ErrorValidationsTest extends BaseTest {
 		
 	String product1 = "Eos V-Neck Hoodie";
 	AccountCreationPage accountCreationPage = homePage.goCreateAccount();
-	accountCreationPage.createAccount("George", "King", "ma408of556@gmail.com", "Password123");
+	accountCreationPage.createAccount("George", "King", "ma408of5591@gmail.com", "Password123");
 	Assert.assertEquals(driver.findElement(By.cssSelector("div[data-ui-id='message-success']")).getText(),
 			"Thank you for registering with Main Website Store.");
 	ProductCatalogue productCatalogue = accountCreationPage.goToProductCatalogue();
