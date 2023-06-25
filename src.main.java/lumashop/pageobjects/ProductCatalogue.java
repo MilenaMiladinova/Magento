@@ -27,8 +27,10 @@ public class ProductCatalogue extends AbstractComponent {
 	@FindBy(css="div[id='product-item-info_1202'] div[id ='option-label-size-157-item-171']")
 	WebElement sizeChoice;
 	
+	
 	@FindBy(css="div[id='product-item-info_1202'] div[id ='option-label-color-93-item-50'")
 	WebElement colorChoice;
+	
 	
 	@FindBy(css="div[id='product-item-info_1202'] button[type='submit']")
 	WebElement submitButton;
@@ -42,18 +44,19 @@ public class ProductCatalogue extends AbstractComponent {
 
 	By productsBy = By.id("page-title-heading");
 	By messageSuccess = By.cssSelector("div[role='alert'] div[data-ui-id='message-success']");
-
+    
+	
 	public List<WebElement> getProductList() {
 
 		waitForElementToAppear(productsBy);
 		return products;
 	}
 
-	public WebElement getProductByName(String product1)
+	public WebElement getProductByName(String product1Name)
 
 	{
 		WebElement prod = getProductList().stream()
-				.filter(product -> product.findElement(By.cssSelector(".product-item-link")).getText().equals(product1))
+				.filter(product -> product.findElement(By.cssSelector(".product-item-link")).getText().equals(product1Name))
 				.findFirst().orElse(null);
 		return prod;
 	}
@@ -61,18 +64,19 @@ public class ProductCatalogue extends AbstractComponent {
 	 public void addProductToCart() throws InterruptedException
 	 
 	 {
-	
+		
 		 sizeChoice.click();
 		 colorChoice.click();
 		 submitButton.click();
+		 Thread.sleep(7000);
 		 waitForElementToAppear(messageSuccess);
-		 Thread.sleep(3000);
 	 }
 	
 	
 	
 	public CartPage goToCartPage()
 	{
+		waitForWebElementToAppear(showCart);
 		showCart.click();
 		viewCart.click();
 		CartPage cartPage = new CartPage (driver);

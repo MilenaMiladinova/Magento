@@ -29,6 +29,12 @@ public class HomePage extends AbstractComponent{
 	@FindBy(xpath="//*[text()='Create New Customer']")
 	WebElement createNewCustomerButton;
 	
+	@FindBy(xpath="(//a[contains(text(),'Sign In')])[1]")
+	WebElement loginButton;
+	
+	
+	
+	
 	
 	By welcomeMsg = By.cssSelector("div[class='panel header'] ul li span[class='not-logged-in']");
 	
@@ -53,6 +59,13 @@ public class HomePage extends AbstractComponent{
 		createNewCustomerButton.click();
 		AccountCreationPage accountCreationPage = new AccountCreationPage (driver);
 		return accountCreationPage;
+	}
+	
+	public LoginPage goLogin()
+	{
+		loginButton.click();
+		LoginPage loginPage = new LoginPage(driver);
+		return loginPage;
 	}
 	
 

@@ -37,7 +37,7 @@ public class StandAloneTest {
 		String state = "Florida";
 		String telephone = "407-555-0113";
 		String password = "Password123";
-		String product1 = "Eos V-Neck Hoodie";
+		String product1Name = "Eos V-Neck Hoodie";
 		
 
 		WebDriverManager.chromedriver().setup();
@@ -52,7 +52,7 @@ public class StandAloneTest {
 				
 		driver.findElement(By.cssSelector("div[class='panel header'] ul li:nth-child(3)")).click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath("(//div[@aria-hidden='false']//a[@id='idXO2mlMK7'])[1]")).click();
+		driver.findElement(By.xpath("(//*[text()='Create New Customer'])[1]")).click();
 		driver.findElement(By.id("firstname")).sendKeys(firstName);
 		driver.findElement(By.id("lastname")).sendKeys(lastName);
 		driver.findElement(By.id("is_subscribed")).click();
@@ -76,7 +76,7 @@ public class StandAloneTest {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("page-title-heading")));
 		List<WebElement> products = driver.findElements(By.className(".column"));
 		WebElement prod = products.stream()
-				.filter(product -> product.findElement(By.cssSelector(".product-item-link")).getText().equals(product1))
+				.filter(product -> product.findElement(By.cssSelector(".product-item-link")).getText().equals(product1Name))
 				.findFirst().orElse(null);
 		driver.findElement(By.cssSelector("div[id='product-item-info_1202'] div[id ='option-label-size-157-item-171']"))
 				.click();
@@ -90,7 +90,7 @@ public class StandAloneTest {
 		driver.findElement(By.cssSelector("a[class='action viewcart']")).click();
 		List<WebElement> cartProducts = driver
 				.findElements(By.cssSelector("tbody[class='cart item'] tr td div strong"));
-		Boolean match = cartProducts.stream().anyMatch(cartProduct -> cartProduct.getText().equalsIgnoreCase(product1));
+		Boolean match = cartProducts.stream().anyMatch(cartProduct -> cartProduct.getText().equalsIgnoreCase(product1Name));
 		Assert.assertTrue(match);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
     	js.executeScript("window.scrollBy(0,400)");

@@ -3,6 +3,7 @@ package lumashop.tests;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
@@ -18,6 +19,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.google.auto.common.Visibility;
@@ -29,54 +31,62 @@ import lumashop.pageobjects.CartPage;
 import lumashop.pageobjects.CheckoutPage;
 import lumashop.pageobjects.ConfirmationPage;
 import lumashop.pageobjects.HomePage;
+import lumashop.pageobjects.LoginPage;
+import lumashop.pageobjects.OrderPage;
 import lumashop.pageobjects.ProductCatalogue;
+import rahulshettyacademy.TestComponents.Retry;
 
 public class SubmitOrderTest extends BaseTest {
 
-	
-	@Test
-	public void submitOrder() throws IOException, InterruptedException {
-	
-	
-	
-		String firstName = "George";
-		String lastName = "King";
-		String email = "ma408of555@gmail.com";
-		String address = "162 Blue Spring Ave.";
-		String city = "Deltona";
-		String postCode = "32725";
-		String country = "United States";
-		String state = "Florida";
-		String telephone = "407-555-0113";
-		String password = "Password123";
-		String product1 = "Eos V-Neck Hoodie";
+	@Test(dataProvider = "getData", groups = { "Purchase" }, retryAnalyzer = lumashop.TestComponents.Retry.class)
+	public void submitOrder(HashMap<String, String> input) throws IOException, InterruptedException {
 
 		
-       
+
 		AccountCreationPage accountCreationPage = homePage.goCreateAccount();
-		accountCreationPage.createAccount("George", "King", "ma408of559@gmail.com", "Password123");
+		accountCreationPage.createAccount(input.get("firstName"), input.get("lastName"), input.get("email"), input.get("password"));
 		Assert.assertEquals(driver.findElement(By.cssSelector("div[data-ui-id='message-success']")).getText(),
 				"Thank you for registering with Main Website Store.");
 		ProductCatalogue productCatalogue = accountCreationPage.goToProductCatalogue();
 		List<WebElement> products = productCatalogue.getProductList();
-		productCatalogue.getProductByName(product1);
+		productCatalogue.getProductByName(input.get("product1Name"));
 		productCatalogue.addProductToCart();
 		CartPage cartPage = productCatalogue.goToCartPage();
-		Boolean match = cartPage.VerifyProduct(product1);
+		Boolean match = cartPage.VerifyProduct(input.get("product1Name"));
 		Assert.assertTrue(match);
 		CheckoutPage checkoutPage = cartPage.goToCheckout();
-		checkoutPage.addAddress(address);
-		checkoutPage.selectCountry(country);
-		checkoutPage.selectState(state);
-		checkoutPage.addCity(city);
-		checkoutPage.addPostCode(postCode);
-		checkoutPage.addTelephoneNumber(telephone);
+		checkoutPage.addAddress(input.get("address"));
+		checkoutPage.selectCountry(input.get("country"));
+		checkoutPage.selectState(input.get("state"));
+		checkoutPage.addCity(input.get("city"));
+		checkoutPage.addPostCode(input.get("postCode"));
+		checkoutPage.addTelephoneNumber(input.get("telephone"));
 		checkoutPage.selectShippingRate();
 		ConfirmationPage confirmationPage = checkoutPage.submitOrder();
 		String successMessage = confirmationPage.getConfirmationMessage();
 		Assert.assertTrue(successMessage.equalsIgnoreCase("Thank you for your purchase!"));
-	    
 
 	}
+
+	@Test(dependsOnMethods = {"submitOrder"},dataProvider= "getData") 
+	public void orderHistoryTest(HashMap<String, String> input)
+
+	{
+		LoginPage loginPage = homePage.goLogin();
+		loginPage.logIn(input.get("email"), input.get("password"));
+		OrderPage orderPage = loginPage.goToOrdersPage();
+		Assert.assertTrue(orderPage.VerifyOrder(input.get("product1Name")));
+
+	}
+
+	@DataProvider
+	public Object[][] getData() throws IOException 
+	{
+
+		List<HashMap<String, String>> data = getJasonDataToMap(System.getProperty("user.dir")+"\\src.test.java\\lumashop\\data\\PurchaseOrder.json");
+		return new Object[][] { { data.get(0) }, {data.get(1)} };
+
+	}
+
 
 }

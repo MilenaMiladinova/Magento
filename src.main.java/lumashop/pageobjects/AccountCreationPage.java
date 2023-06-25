@@ -2,12 +2,18 @@ package lumashop.pageobjects;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -73,6 +79,9 @@ public class AccountCreationPage extends AbstractComponent {
 		passwordConfirmationInput.sendKeys(password);
 		submitInput.click();
 	}
+	
+	
+	
 
 	public String getErrorMessage() {
 		waitForWebElementToAppear(errorMessage);
@@ -80,6 +89,8 @@ public class AccountCreationPage extends AbstractComponent {
 	}
 
 	public ProductCatalogue goToProductCatalogue() throws InterruptedException {
+	    
+		waitForWebElementToAppear(womenDepartment);
 		Actions a = new Actions(driver);
 		a.moveToElement(womenDepartment).build().perform();
 		Thread.sleep(2000);

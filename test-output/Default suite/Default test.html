@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Feb 26 14:38:39 EET 2023</td>
+<td>Started on:</td><td>Sun Jun 25 23:12:50 EEST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>48 seconds (48028 ms)</td>
+<tr><td>Total time:</td><td>60 seconds (60340 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,18 +76,24 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='lumashop.tests.SubmitOrderTest.submitOrder()'><b>submitOrder</b><br>Test class: lumashop.tests.SubmitOrderTest</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: div[role=&apos;alert&apos;] div[data-ui-id=&apos;message-success&apos;] (tried for 5 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.7.2&apos;, revision: &apos;4d4020c3b7&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.4.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 110.0.5481.104, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: C:\Users\milen\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:49845}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49845/devtoo..., se:cdpVersion: 110.0.5481.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 546a214b23707012dfe3788c5889e544
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at lumashop.AbstractComponents.AbstractComponent.waitForElementToAppear(AbstractComponent.java:24)
-	at lumashop.pageobjects.ProductCatalogue.addProductToCart(ProductCatalogue.java:68)
-	at lumashop.tests.SubmitOrderTest.submitOrder(SubmitOrderTest.java:63)
+<td title='cucumber.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumber.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Positive test of submitting the order", "Place an order in Ecommerce website"</td>
+<td><div><pre>io.cucumber.testng.UndefinedStepException: The step &apos;&quot;Thank you for your purchase!&quot; message is displayed on ConfirmationPage.&apos; is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then(&quot;{string} message is displayed on ConfirmationPage.&quot;)
+public void message_is_displayed_on_confirmation_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+	at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
+	at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:133)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:130)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:130)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -116,18 +122,24 @@ Session ID: 546a214b23707012dfe3788c5889e544
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace877785117", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace877785117'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: div[role=&apos;alert&apos;] div[data-ui-id=&apos;message-success&apos;] (tried for 5 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.7.2&apos;, revision: &apos;4d4020c3b7&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.4.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 110.0.5481.104, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: C:\Users\milen\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:49845}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49845/devtoo..., se:cdpVersion: 110.0.5481.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 546a214b23707012dfe3788c5889e544
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at lumashop.AbstractComponents.AbstractComponent.waitForElementToAppear(AbstractComponent.java:24)
-	at lumashop.pageobjects.ProductCatalogue.addProductToCart(ProductCatalogue.java:68)
-	at lumashop.tests.SubmitOrderTest.submitOrder(SubmitOrderTest.java:63)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1174599796", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1174599796'><pre>io.cucumber.testng.UndefinedStepException: The step &apos;&quot;Thank you for your purchase!&quot; message is displayed on ConfirmationPage.&apos; is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then(&quot;{string} message is displayed on ConfirmationPage.&quot;)
+public void message_is_displayed_on_confirmation_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+	at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
+	at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:133)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:130)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:130)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -157,8 +169,8 @@ Session ID: 546a214b23707012dfe3788c5889e544
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>38</td>
-<td>lumashop.tests.SubmitOrderTest@4a883b15</td></tr>
+<td>59</td>
+<td>cucumber.TestNGTestRunner@6e9a5ed8</td></tr>
 </table><p>
 </body>
 </html>

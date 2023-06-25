@@ -22,14 +22,14 @@ public class CartPage extends AbstractComponent {
 	}
 
 	@FindBy(css = "tbody[class='cart item'] tr td div strong")
-	private List<WebElement> cartProducts;
+    private List<WebElement> cartProducts;
 
 	@FindBy(css = "div[class='cart-summary _sticky'] ul li button :nth-child(1)")
 	WebElement proceedToCheckoutButton;
 
-	public Boolean VerifyProduct(String product1) {
+	public Boolean VerifyProduct(String product1Name) {
 
-		Boolean match = cartProducts.stream().anyMatch(cartProduct -> cartProduct.getText().equalsIgnoreCase(product1));
+		Boolean match = cartProducts.stream().anyMatch(cartProduct -> cartProduct.getText().equalsIgnoreCase(product1Name));
 		return match;
 	}
 	
@@ -39,6 +39,7 @@ public class CartPage extends AbstractComponent {
 	{
 		scroll();
 		Thread.sleep(3000);
+		waitForWebElementToAppear(proceedToCheckoutButton);
 		proceedToCheckoutButton.click();
 		return new CheckoutPage(driver);
 	
