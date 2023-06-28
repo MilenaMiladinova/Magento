@@ -84,7 +84,7 @@ public class StepDefinitionImpl extends BaseTest{
     public void message_displayed_confirmationPage(String string)
     {
     	String confirmMessage = confirmationPage.getConfirmationMessage();
-		Assert.assertTrue(confirmMessage.equalsIgnoreCase("Thank you for your purchase!"));
+		Assert.assertTrue(confirmMessage.equalsIgnoreCase(string));
 		driver.close();
     }
     

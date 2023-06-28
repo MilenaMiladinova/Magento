@@ -14,7 +14,7 @@ import lumashop.AbstractComponents.AbstractComponent;
 
 public class HomePage extends AbstractComponent{
 	
-	WebDriver driver;
+	protected WebDriver driver;
 
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -24,13 +24,13 @@ public class HomePage extends AbstractComponent{
 
 	
 	@FindBy(css="div[class='panel header'] ul li:nth-child(3)")
-	WebElement createAccountButton;
+	private WebElement createAccountButton;
 	
 	@FindBy(xpath="//*[text()='Create New Customer']")
-	WebElement createNewCustomerButton;
+	private WebElement createNewCustomerButton;
 	
 	@FindBy(xpath="(//a[contains(text(),'Sign In')])[1]")
-	WebElement loginButton;
+	private WebElement loginButton;
 	
 	
 	

@@ -12,7 +12,7 @@ import lumashop.AbstractComponents.AbstractComponent;
 
 public class CheckoutPage extends AbstractComponent {
 
-	WebDriver driver;
+	protected WebDriver driver;
 
 	public CheckoutPage(WebDriver driver) {
 		super(driver);
@@ -22,37 +22,37 @@ public class CheckoutPage extends AbstractComponent {
 	}
 
 	@FindBy(css = "input[name='street[0]']")
-	WebElement addressInput;
+	private WebElement addressInput;
 
 	@FindBy(css = "input[name='city']")
-	WebElement cityInput;
+	private WebElement cityInput;
 
 	@FindBy(css = "input[name='postcode']")
-	WebElement postCodeInput;
+	private WebElement postCodeInput;
 
 	@FindBy(css = "input[name='telephone']")
-	WebElement telephoneInput;
+	private WebElement telephoneInput;
 
 	@FindBy(css = ".continue")
-	WebElement continueButton;
+	private WebElement continueButton;
 
 	@FindBy(css = "input[value='flatrate_flatrate']")
-	WebElement flatRateRadioButton;
+	private WebElement flatRateRadioButton;
 
 	@FindBy(css = "select[name='country_id']")
-	WebElement selectCountry;
+	private WebElement selectCountry;
 
 	@FindBy(css = "select[name='region_id']")
-	WebElement selectState;
+	private WebElement selectState;
 
 	@FindBy(css = "//*[text()='Place Order']")
-	WebElement placeOrderButton;
+	private WebElement placeOrderButton;
 
 	@FindBy(css = "//*[text()='Thank you for your purchase!']")
-	WebElement successMessage;
+	private WebElement successMessage;
 	
 	@FindBy(xpath = "//*[text()='Place Order']")
-	WebElement submit;
+	private WebElement submit;
 
 	public void addAddress(String address) throws InterruptedException {
 

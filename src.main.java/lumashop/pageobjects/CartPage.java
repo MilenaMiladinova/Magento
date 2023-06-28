@@ -12,7 +12,7 @@ import lumashop.AbstractComponents.AbstractComponent;
 
 public class CartPage extends AbstractComponent {
 
-	WebDriver driver;
+	protected WebDriver driver;
 
 	public CartPage(WebDriver driver) {
 		super(driver);
@@ -25,7 +25,7 @@ public class CartPage extends AbstractComponent {
     private List<WebElement> cartProducts;
 
 	@FindBy(css = "div[class='cart-summary _sticky'] ul li button :nth-child(1)")
-	WebElement proceedToCheckoutButton;
+	private WebElement proceedToCheckoutButton;
 
 	public Boolean VerifyProduct(String product1Name) {
 

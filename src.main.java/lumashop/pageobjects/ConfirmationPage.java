@@ -10,7 +10,7 @@ import lumashop.AbstractComponents.AbstractComponent;
 
 public class ConfirmationPage extends AbstractComponent {
 
-	WebDriver driver;
+	protected WebDriver driver;
 
 	public ConfirmationPage(WebDriver driver) {
 		super(driver);
@@ -20,7 +20,7 @@ public class ConfirmationPage extends AbstractComponent {
 	}
 
 	@FindBy(xpath = "//*[text()='Thank you for your purchase!']")
-	WebElement successMessage;
+	private WebElement successMessage;
 
 	public String getConfirmationMessage() {
 

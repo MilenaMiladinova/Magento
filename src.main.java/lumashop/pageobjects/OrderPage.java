@@ -11,7 +11,7 @@ import lumashop.AbstractComponents.AbstractComponent;
 
 public class OrderPage extends AbstractComponent {
 
-	WebDriver driver;
+	protected WebDriver driver;
 
 	public OrderPage(WebDriver driver) {
 		super(driver);
@@ -20,7 +20,7 @@ public class OrderPage extends AbstractComponent {
 }
 	
 	@FindBy(xpath="//*[text()='View Order']")
-	WebElement viewOrderButton;
+	private WebElement viewOrderButton;
 	
 	@FindBy(css = "tr td:nth-child(1)")
     private List<WebElement> orderedProductName;

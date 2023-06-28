@@ -27,7 +27,7 @@ import lumashop.AbstractComponents.AbstractComponent;
 
 public class AccountCreationPage extends AbstractComponent {
 
-	WebDriver driver;
+	protected WebDriver driver;
 
 	public AccountCreationPage(WebDriver driver) {
 		super(driver);
@@ -37,34 +37,34 @@ public class AccountCreationPage extends AbstractComponent {
 	}
 
 	@FindBy(id = "firstname")
-	WebElement firstNameInput;
+	private WebElement firstNameInput;
 
 	@FindBy(id = "lastname")
-	WebElement lastNameInput;
+	private WebElement lastNameInput;
 
 	@FindBy(id = "is_subscribed")
-	WebElement isSubscribed;
+	private WebElement isSubscribed;
 
 	@FindBy(id = "email_address")
-	WebElement emailAddressInput;
+	private WebElement emailAddressInput;
 
 	@FindBy(id = "password")
-	WebElement passwordInput;
+	private WebElement passwordInput;
 
 	@FindBy(id = "password-confirmation")
-	WebElement passwordConfirmationInput;
+	private WebElement passwordConfirmationInput;
 
 	@FindBy(css = "button[title='Create an Account']")
-	WebElement submitInput;
+	private WebElement submitInput;
 
 	@FindBy(xpath = "//nav/ul/li[2]")
-	WebElement womenDepartment;
+	private WebElement womenDepartment;
 
 	@FindBy(id = "ui-id-13")
-	WebElement productCategory;
+	private WebElement productCategory;
 
 	@FindBy(css = ".message-error")
-	WebElement errorMessage;
+	private WebElement errorMessage;
 
 	
 

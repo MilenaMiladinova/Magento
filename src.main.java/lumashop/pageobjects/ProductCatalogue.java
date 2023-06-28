@@ -12,7 +12,7 @@ import lumashop.AbstractComponents.AbstractComponent;
 
 public class ProductCatalogue extends AbstractComponent {
 
-	WebDriver driver;
+	protected WebDriver driver;
 
 	public ProductCatalogue(WebDriver driver) {
 		super(driver);
@@ -22,24 +22,24 @@ public class ProductCatalogue extends AbstractComponent {
 	}
 
 	@FindBy(className = ".column")
-	List<WebElement> products;
+	private List<WebElement> products;
 	
 	@FindBy(css="div[id='product-item-info_1202'] div[id ='option-label-size-157-item-171']")
-	WebElement sizeChoice;
+	private WebElement sizeChoice;
 	
 	
 	@FindBy(css="div[id='product-item-info_1202'] div[id ='option-label-color-93-item-50'")
-	WebElement colorChoice;
+	private WebElement colorChoice;
 	
 	
 	@FindBy(css="div[id='product-item-info_1202'] button[type='submit']")
-	WebElement submitButton;
+	private WebElement submitButton;
 	
 	@FindBy(css=".showcart")
-	WebElement showCart;
+	private WebElement showCart;
 	
 	@FindBy(css="a[class='action viewcart']")
-	WebElement viewCart;
+	private WebElement viewCart;
 	
 
 	By productsBy = By.id("page-title-heading");

@@ -10,7 +10,7 @@ import lumashop.AbstractComponents.AbstractComponent;
 
 public class LoginPage extends AbstractComponent {
 
-	WebDriver driver;
+	protected WebDriver driver;
 
 	public LoginPage(WebDriver driver) {
 		super(driver);
@@ -19,22 +19,22 @@ public class LoginPage extends AbstractComponent {
 	}
 
 	@FindBy(id = "email")
-	WebElement emailInput;
+	private WebElement emailInput;
 
 	@FindBy(css = "input[name='login[password]']")
-	WebElement passwordInput;
+	private WebElement passwordInput;
 
 	@FindBy(xpath = "(//div[@class='primary'] //*[text()='Sign In'])[1]")
-	WebElement signInButton;
+	private WebElement signInButton;
 	
 	@FindBy(xpath = "(//button[@class='action switch'])[1]")
-	WebElement switchMenuButton;
+	private WebElement switchMenuButton;
 	
 	@FindBy(xpath= "(//a[contains(text(),'My Account')])[1]")
-	WebElement myAccountButton;
+	private WebElement myAccountButton;
 	
 	@FindBy(xpath="//*[text()='My Orders']")
-	WebElement myOrdersButton;
+	private WebElement myOrdersButton;
 
 	public void logIn(String email, String password) {
 
